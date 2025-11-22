@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poppy</title>
+
+
+    <style>
+        header .navigationBar{
+            display: flex;
+            align-items: centre;
+            justify-content: space-between;
+        }
+
+        .navigationBar .navigationMenu{
+            display: flex;
+            gap:30px;
+        }
+
+
+       
+       .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+}
+
+/* Left side (title, description, buttons) */
+.section-content {
+    flex: 1;
+}
+
+/* Makes the text column vertical */
+.hero-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+
+
+/* Right-side image */
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 450px;
+}
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigationBar">
+            <a href="#" class="navLogo">
+                <h2 class="logo text">📅 Poppy</h2>
+            </a>
+            <ul class="navigationMenu">
+                <li class="navigationItem">
+                    <a href="#" class = "naLink">Home</a>
+                </li>
+
+                 <li class="navigationItem">
+                    <a href="#" class = "naLink">About us</a>
+                </li>
+
+                 <li class="navigationItem">
+                    <a href="#" class = "naLink">Contact</a>
+                </li>
+
+                 <li class="navigationItem">
+                    <a href="#" class = "naLink">Login</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="section-content">
+            <div class = hero-details>
+                <h2 class="title">Stay focused<br>
+                Stay Organized <br>
+            Succeed</h2>
+
+            <p class="description"> Create schedules,set goals, and stay consistent with a planner
+                that works the way you do. <br>Eliminate distractions, find flow, and do more high-impact work without burining out.<br>
+                The digital planner that does it all.
+            </p>
+
+           
+                <a href="loginPage.html">
+                    <button class="loginPage">Try for free</button>
+                </a>
+                
+                <p class="trial-note">Start your free trial today.<br> Explore all tools free.</p>
+            </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="data:image/png;base64,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" alt="planner" class = "hero-image">
+            </div>
+        </div>
+
+    </section>
+
+
+
+</body>
+</html>
