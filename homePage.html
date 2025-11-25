@@ -56,6 +56,36 @@
     max-width: 450px;
 }
 
+          .advantages-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+}
+
+/* Left side (title, description, buttons) */
+.section-content {
+    flex: 1;
+}
+
+/* Makes the text column vertical */
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* Right-side */
+.advantages {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
        
     </style>
 </head>
@@ -112,6 +142,35 @@
         </div>
 
     </section>
+
+        <section class="advantages-section">
+        <div class="section-content">
+            <div class="disadvantages-section">
+                <h2 class="title">😩 <br>
+                 Work is just so chaotic</h2>
+
+                 <ul>
+                    <li>Working nonstop, staying late, and never feeling done</li>
+                    <li>Distractions keep breaking your flow and focus</li>
+                    <li>Finding it difficult to juggle tasks and meetings</li>
+                 </ul>
+            </div>
+        </div>
+
+        <div class="advantages">
+             <h2 class="title">📅 
+                 Poppy turns Chaos into Clarity.</h2>
+
+                 <ul>
+                    <li>Wrap up your day feeling organized and accomplished.</li>
+                    <li>Block focus time—and truly protect it.</li>
+                    <li>View your tasks and meetings in a single, clear plan.</li>
+                 </ul>
+        </div>
+
+
+    </section>
+
 
 
 
