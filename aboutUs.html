@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founders Page</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: orange;
+    color: white;
+  }
+
+  .hero h1 {
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  /* WHO WE ARE SECTION */
+  .section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .section small {
+    display: block;
+    text-align: center;
+    color: #777;
+    margin-bottom: 5px;
+  }
+
+  .section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* CARDS GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid;
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .info {
+    padding: 15px;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .role {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .quote {
+    font-size: 14px;
+  }
+
+  .author {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+  }
+
+  /* FOOTER */
+  .footer-text {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+  }
+
+  .letters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0 40px;
+  }
+
+  .letters div {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>One Vision</h1>
+  <div class="subtitle">Freedom for every individual in business.</div>
+</div>
+
+<!-- MAIN SECTION -->
+<div class="section">
+
+  <small>Who we are</small>
+  <h2>Meet the founders</h2>
+
+  <div class="grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="#" alt="Founder 1">
+      <div class="info">
+        <div class="name">Imran Kabogo</div>
+        <div class="role">Created the website layout using HTML.</div>
+        <div class="quote">“God helps those who help themselves. Energy and persistence conquer all things.”</div>
+        <div class="author">— Benjamin Franklin</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="#" alt="Founder 2">
+      <div class="info">
+        <div class="name">Vikas Vijaya Bhaskar </div>
+        <div class="role">Operations in CSS develpment.</div>
+        <div class="quote">“Everything great is created by individuals who can labor in freedom.”</div>
+        <div class="author">— Albert Einstein</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <img src="#" alt="Founder 3">
+      <div class="info">
+        <div class="name">Third guy </div>
+        <div class="role">Vikas Vijaya Bhaskar  </div>
+        <div class="quote">“Our purpose in life is to help others. If you can't help them, don't hurt them.”</div>
+        <div class="author">— Dalai Lama</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-text">We are all One</div>
+
+  <div class="letters">
+    <div>P</div>
+    <div>O</div>
+    <div>P</div>
+    <div>P</div>
+    <div>Y</div>
+  </div>
+
+</div>
+
+</body>
+</html>
