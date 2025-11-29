@@ -3,10 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="A study planner website to help students stay organized and productive.">
 <title>Founders Page</title>
 
 <style>
+
+  header .navigationBar{
+            display: flex;
+            align-items: centre;
+            justify-content: space-between;
+        }
+
+        .navigationBar .navigationMenu{
+            display: flex;
+            gap:30px;
+        }
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -15,7 +26,6 @@
   /* HERO SECTION */
   .hero {
     text-align: center;
-    padding: 50px 20px;
     background: orange;
     color: white;
   }
@@ -119,8 +129,33 @@
 </head>
 <body>
 
+
+
 <!-- HERO -->
 <div class="hero">
+
+     <header>
+       <nav class="navigationBar">
+            <a href="homePage.html" class="navLogo">
+                <h2 class="logo text">📅 Poppy</h2>
+            </a>
+            <ul class="navigationMenu">
+                <li class="navigationItem">
+                    <a href="index.html" class = "naLink">Home</a>
+                </li>
+
+                 <li class="navigationItem">
+                    <a href="aboutUs.html" class = "naLink">About us</a>
+                 </li>
+
+                 <li class="navigationItem">
+                    <a href="loginPage.html" class = "naLink">Login</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
   <h1>One Vision</h1>
   <div class="subtitle">Freedom for every individual in business.</div>
 </div>
