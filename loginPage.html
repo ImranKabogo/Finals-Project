@@ -13,46 +13,69 @@
 
 <header>
     <nav class="navigationBar">
-        <a href="homePage.html" class="navLogo">
-            <h2 class="logo text">📅 Poppy</h2>
+        <a href="index.html" class="navLogo">
+            <h2 class="logo">📅 Poppy</h2>
         </a>
+
         <ul class="navigationMenu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutUs.html">About us</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
             <li><a href="loginPage.html">Login</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="container">
+<section class="signup-container">
 
-    <h1>SIGN UP</h1>
+    <h1 class="title">Sign up</h1>
 
-    <div class="input">
+    <div class="input-area">
         <input id="emailInput" type="email" placeholder="Email address">
         <p id="notification"></p>
-        <button>Start Trial</button>
+        <button id="startBtn" disabled>Start trial</button>
     </div>
 
-    <p class="login">Already have an account? <a href="#">Log in.</a></p>
+    <p class="loginText">
+        Already have an account? <a href="#">Log in.</a>
+    </p>
 
-    <p class="message">
+    <p class="trial-info">
         14-day free trial. <br>No credit card required.
     </p>
 
-</div>
+</section>
 
 <script>
-    const emailInfo = document.getElementById("emailInput");
-    const notification = document.getElementById("notification");
+    const emailInput = document.getElementById("emailInput");
+const notification = document.getElementById("notification");
+const startBtn = document.getElementById("startBtn");
 
-    emailInfo.addEventListener("input", () => {
-        if (!emailInfo.value.includes("@")) {
-            notification.textContent = "You need to include an @ in the email.";
-        } else {
-            notification.textContent = "";
-        }
-    });
+// validate email live
+emailInput.addEventListener("input", () => {
+
+    const email = emailInput.value;
+    const valid = email.includes("@");
+
+    if (!valid) {
+        notification.textContent = "Email must contain @.";
+        startBtn.disabled = true;
+        startBtn.classList.remove("enabled");
+
+       
+
+    } else {
+        notification.textContent = "";
+        startBtn.disabled = false;
+        startBtn.classList.add("enabled");
+    }
+});
+
+
+// When clicking Start Trial
+startBtn.addEventListener("click", () => {
+    alert("Welcome to your free 14-day trial!");
+});
+
 </script>
 
 </body>
