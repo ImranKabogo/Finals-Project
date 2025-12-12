@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Feedback and support page for Poppy study planner.">
+  <title>Feedback - Poppy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navigationBar">
+      <a href="index.html" class="navLogo">
+        <img class="logo-img" src="images/poppy-logo.png" alt="Poppy Logo">
+      </a>
+
+      <ul class="navigationMenu">
+        <li><a href="index.html" class="naLink">Home</a></li>
+        <li><a href="aboutUs.html" class="naLink">About Us</a></li>
+        <li><a href="pricing.html" class="naLink">Pricing</a></li>
+        <li><a href="loginPage.html" class="naLink">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Feedback form -->
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <div class="contact-image">
+        <img src="https://media.istockphoto.com/id/1442923178/vector/contact-us-via-email-phone-or-office-location-communicate-with-customer-or-client-business.jpg?s=612x612&w=0&k=20&c=v-8_qV7aUgKRK00-nvgKl-PgFMr7UapMn3vnKYONtZA=" alt="Contact illustration">
+      </div>
+
+      <div class="contact-form">
+        <p class="contact-tag">CONTACT OUR TEAM</p>
+        <h2 class="contact-title">Feedback & Support</h2>
+        <p class="contact-desc">
+          Send us feedback, ask for help, or request information about getting started with Poppy.
+        </p>
+
+        <form data-feedback-form="true">
+          <input type="text" id="fullName" name="fullName" placeholder="Your First & Last Name" required>
+
+          <div class="input-row">
+            <input type="email" id="email" name="email" placeholder="Your E-Mail Address" required>
+            <input type="text" id="phone" name="phone" placeholder="Your Phone Number">
+          </div>
+
+          <textarea id="message" name="message" placeholder="Please leave a brief message." required></textarea>
+
+          <button type="submit" class="contact-btn">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <hr class="divider">
+    <p class="copyright">©️ 2025 Poppy. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
