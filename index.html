@@ -1,175 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A study planner website to help students stay organized and productive.">
-    <title>Poppy</title>
-
-    <link rel="stylesheet" href="style.css">
-    
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A study planner website to help students stay organized and productive.">
+  <title>Poppy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-       <nav class="navigationBar">
-            <a href="index.html" class="navLogo">
-                <h2 class="logo text">📅 Poppy</h2>
-            </a>
-            <ul class="navigationMenu">
-                <li ><a href="index.html" class = "naLink">Home</a></li>
-                <li >  <a href="aboutUs.html" class = "naLink">About Us</a> </li>
-                 <li ><a href="pricing.html" class = "naLink">Pricing</a></li>
-                 <li ><a href="loginPage.html" class = "naLink">Login</a></li>
-            </ul>
-
-        </nav>
-    </header>
 
 <body>
-    <section class="hero-section">
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navigationBar">
+      <a href="index.html" class="navLogo">
+        <img class="logo-img" src="images/poppy-logo.png" alt="Poppy Logo">
+      </a>
+
+      <ul class="navigationMenu">
+        <li><a href="index.html" class="naLink">Home</a></li>
+        <li><a href="aboutUs.html" class="naLink">About Us</a></li>
+        <li><a href="pricing.html" class="naLink">Pricing</a></li>
+        <li><a href="loginPage.html" class="naLink">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section">
     <div class="hero-left">
-        <div class="badge">Created by Students, Built for Students</div>
+      <div class="badge">Created by Students, Built for Students</div>
 
-        <h1 class="hero-title">
-            Stay focused.<br>
-            Stay organized.<br>
-            Succeed.
-        </h1>
+      <h1 class="hero-title">
+        Stay focused.<br>
+        Stay organized.<br>
+        Succeed.
+      </h1>
 
-        <p class="hero-description">
-            Create schedules,set goals, and stay consistent with a planner
-                that works the way you do. <br>Eliminate distractions and do more high-impact work without burining out.
-                The digital planner that does it all.
-        </p>
+      <p class="hero-description">
+        Create schedules,set goals, and stay consistent with a planner that works the way you do.
+        <br>
+        Eliminate distractions and do more high-impact work without burining out. The digital planner that does it all.
+      </p>
 
-        <a href="loginPage.html" class="hero-btn">Try for free</a>
-        <p class="small-note">14–day free trial • No credit card required</p>
+      <a href="loginPage.html" class="hero-btn">Try for free</a>
+      <p class="small-note">14–day free trial • No credit card required</p>
     </div>
 
     <div class="hero-right">
-        <div class="hero-image-frame">
-            <img src="https://i.pinimg.com/736x/8c/c8/75/8cc875f5fd62736c0ae09a39124cbbfe.jpg" alt="planner preview">
-        </div>
+      <div class="hero-image-frame">
+        <img src="https://i.pinimg.com/736x/8c/c8/75/8cc875f5fd62736c0ae09a39124cbbfe.jpg" alt="planner preview">
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="advantages-section">
-
+  <section class="advantages-section">
     <div class="adv-container">
+      <div class="adv-left">
+        <h2 class="adv-title">😩 Work is just so chaotic</h2>
+        <ul class="adv-list">
+          <li>Working nonstop, staying late, and never feeling done</li>
+          <li>Distractions keep breaking your flow and focus</li>
+          <li>Finding it difficult to juggle tasks and meetings</li>
+        </ul>
+      </div>
 
-        <!-- LEFT SIDE: PROBLEMS -->
-        <div class="adv-left">
-            <h2 class="adv-title">😩 Work is just so chaotic</h2>
-            <ul class="adv-list">
-                <li>Working nonstop, staying late, and never feeling done</li>
-                <li>Distractions keep breaking your flow and focus</li>
-                <li>Finding it difficult to juggle tasks and meetings</li>
-            </ul>
-        </div>
+      <div class="adv-right">
+        <h2 class="adv-title">📅 Poppy turns Chaos into Clarity</h2>
+        <ul class="adv-list">
+          <li>Wrap up your day feeling organized and accomplished</li>
+          <li>Block focus time—and truly protect it</li>
+          <li>View tasks and meetings in one clear plan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <!-- RIGHT SIDE: SOLUTIONS -->
-        <div class="adv-right">
-            <h2 class="adv-title">📅 Poppy turns Chaos into Clarity</h2>
-            <ul class="adv-list">
-                <li>Wrap up your day feeling organized and accomplished</li>
-                <li>Block focus time—and truly protect it</li>
-                <li>View tasks and meetings in one clear plan</li>
-            </ul>
-        </div>
+  <!-- Highlight section for footer "Features" link -->
+  <main class="grid-layout" id="highlight-block">
+    <section class="grid-item">
+      <h2>Basic Features-block</h2>
+      <h3>Responsive Design</h3>
+      <p>Looks great on phones, tablets, and desktops with flexible layouts that adapt to any screen size.</p>
+    </section>
+
+    <section class="grid-item">
+      <h2>Basic Features-block</h2>
+      <h3>Interactive Forms</h3>
+      <p>HTML5 form features and dynamic JavaScript validation ensure fast and accurate submissions.</p>
+    </section>
+
+    <section class="grid-item">
+      <h2>Basic Features-block</h2>
+      <h3>Clean & Modern Layout</h3>
+      <p>Built with CSS Grid and Float for a sleek, professional look that’s easy to navigate.</p>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#highlight-block" id="footerFeaturesLink">Features</a></li>
+          <li><a href="pricing.html#plans" id="footerPricingLink">Pricing</a></li>
+          <li><a href="#" id="footerTemplatesLink">Study Templates</a></li>
+          <li><a href="loginPage.html" id="footerMobileAppLink">Mobile App</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#" id="footerStudyGuidesLink">Study Guides</a></li>
+          <li><a href="#" id="footerTimeTipsLink">Time Management Tips</a></li>
+          <li><a href="#" id="footerFaqLink">FAQ</a></li>
+          <li><a href="feedback.html" id="footerSupportLink">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://discord.com" target="_blank" rel="noopener">Discord</a></li>
+        </ul>
+      </div>
 
     </div>
 
-</section>
+    <hr class="divider">
 
-<section class="contact-section">
+    <p class="copyright">©️ 2025 Poppy. All rights reserved.</p>
+    <p class="update">Last updated: <span id="recentUpdate"></span></p>
+  </footer>
 
-    <div class="contact-container">
+  <!-- Modals -->
+  <div class="modal-overlay" id="templatesModal">
+    <div class="modal">
+      <h2 class="modal-title">Free Study Template Preview</h2>
+      <p class="modal-text">Here’s a simple weekly study plan preview:</p>
 
-        <!-- LEFT SIDE IMAGE -->
-        <div class="contact-image">
-            <img src="https://media.istockphoto.com/id/1442923178/vector/contact-us-via-email-phone-or-office-location-communicate-with-customer-or-client-business.jpg?s=612x612&w=0&k=20&c=v-8_qV7aUgKRK00-nvgKl-PgFMr7UapMn3vnKYONtZA=" alt="Contact illustration">
-        </div>
+      <div class="template-box">
+        <p><strong>Mon:</strong> 1 hr review + 30 min practice</p>
+        <p><strong>Tue:</strong> 1 hr notes + 45 min quiz</p>
+        <p><strong>Wed:</strong> 2 hr deep focus block</p>
+        <p><strong>Thu:</strong> 1 hr revision + 30 min flashcards</p>
+        <p><strong>Fri:</strong> 1 hr catch-up + plan next week</p>
+      </div>
 
-        <!-- RIGHT SIDE FORM -->
-        <div class="contact-form">
-            <p class="contact-tag">CONTACT OUR TEAM</p>
-
-            <h2 class="contact-title">Get in Touch With Us</h2>
-
-            <p class="contact-desc">
-                Contact us today for help, support, or information about getting started with Poppy.
-            </p>
-
-            <form>
-                <input type="text" placeholder="Your First & Last Name" required>
-                
-                <div class="input-row">
-                    <input type="email" placeholder="Your E-Mail Address" required>
-                    <input type="text" placeholder="Your Phone Number">
-                </div>
-
-                <textarea placeholder="Please leave a brief message about your project." required></textarea>
-
-                <button type="submit" class="contact-btn">Submit</button>
-            </form>
-        </div>
-
+      <button class="modal-close" data-close-modal="templatesModal">Close</button>
     </div>
-
-</section>
-
-
-<footer class="main-footer">
-
-  <div class="footer-container">
-
-    <!-- Product -->
-    <div class="footer-section">
-      <h4>Product</h4>
-      <ul>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Study Templates</a></li>
-        <li><a href="#">Mobile App</a></li>
-      </ul>
-    </div>
-
-    <!-- Resources -->
-    <div class="footer-section">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="#">Study Guides</a></li>
-        <li><a href="#">Time Management Tips</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Support</a></li>
-      </ul>
-    </div>
-
-    <!-- Connect -->
-    <div class="footer-section">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">YouTube</a></li>
-        <li><a href="#">Discord</a></li>
-      </ul>
-    </div>
-
   </div>
 
-  <hr class="divider">
+  <div class="modal-overlay" id="faqModal">
+    <div class="modal">
+      <h2 class="modal-title">FAQ</h2>
+      <p class="modal-text"><strong>1)</strong> Do I need a credit card? <br>No.</p>
+      <p class="modal-text"><strong>2)</strong> Can I cancel anytime? <br>Yes.</p>
+      <p class="modal-text"><strong>3)</strong> Does it work on mobile? <br>Yes (login page for mobile access).</p>
+      <p class="modal-text"><strong>4)</strong> Is it beginner-friendly? <br>Yes, it’s made for students.</p>
 
-  <p class="copyright">©️ 2025 Poppy. All rights reserved.</p>
-  <p class="update">Last updated: <span id="recentUpdate"></span></p>
+      <button class="modal-close" data-close-modal="faqModal">Close</button>
+    </div>
+  </div>
 
-</footer>
+  <div class="modal-overlay" id="timeTipsModal">
+    <div class="modal">
+      <h2 class="modal-title">Time Management Tips</h2>
+      <p class="modal-text">• Use 45–15 focus cycles (45 min work, 15 min break).</p>
+      <p class="modal-text">• Plan tomorrow in 3 minutes before sleep.</p>
+      <p class="modal-text">• Do the hardest task first (1 “deep focus” block).</p>
+      <p class="modal-text">• Keep a weekly “catch-up” day.</p>
 
-<script>
+      <button class="modal-close" data-close-modal="timeTipsModal">Close</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="studyGuidesModal">
+    <div class="modal">
+      <h2 class="modal-title">Study Guides</h2>
+      <p class="modal-text">• Active recall: test yourself instead of rereading.</p>
+      <p class="modal-text">• Spaced repetition: review over multiple days.</p>
+      <p class="modal-text">• Past papers: practice under time pressure.</p>
+      <p class="modal-text">• Summarize concepts in your own words.</p>
+
+      <button class="modal-close" data-close-modal="studyGuidesModal">Close</button>
+    </div>
+  </div>
+
+  <script>
     document.getElementById("recentUpdate").innerText = document.lastModified;
-</script>
+  </script>
 
-
+  <script src="script.js"></script>
 </body>
 </html>
-    
