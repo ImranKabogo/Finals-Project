@@ -1,96 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="A study planner website to help students stay organized and productive.">
-    <title>Pricing Page</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A study planner website to help students stay organized and productive.">
+  <title>Pricing Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  
-        <header>
-       <nav class="navigationBar">
-            <a href="index.html" class="navLogo">
-                <h2 class="logo text">📅 Poppy</h2>
-            </a>
-            <ul class="navigationMenu">
-                <li ><a href="index.html" class = "naLink">Home</a></li>
-                <li >  <a href="aboutUs.html" class = "naLink">About Us</a> </li>
-                 <li ><a href="pricing.html" class = "naLink">Pricing</a></li>
-                 <li ><a href="loginPage.html" class = "naLink">Login</a></li>
 
-            </ul>
+  <!-- Navbar -->
+  <header>
+    <nav class="navigationBar">
+      <a href="index.html" class="navLogo">
+        <img class="logo-img" src="images/poppy-logo.png" alt="Poppy Logo">
+      </a>
 
-        </nav>
-    </header>
+      <ul class="navigationMenu">
+        <li><a href="index.html" class="naLink">Home</a></li>
+        <li><a href="aboutUs.html" class="naLink">About Us</a></li>
+        <li><a href="pricing.html" class="naLink">Pricing</a></li>
+        <li><a href="loginPage.html" class="naLink">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   
-   
-    <section class="pricing-section">
-  <h1 class="pricing-title">Pricing Plans</h1>
+  <!-- Plans -->
+  <section class="pricing-section" id="plans">
+    <h1 class="pricing-title">Pricing Plans</h1>
 
-  <table class="pricing-table">
-    <thead>
-      <tr>
-        <th>Plan</th>
-        <th>Price</th>
-        <th>Features</th>
-        <th></th>
-      </tr>
-    </thead>
+    <table class="pricing-table" id="pricingTable">
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Price</th>
+          <th>Features</th>
+          <th></th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td>Basic</td>
-        <td>$0</td>
-        <td>
-          • Daily Planner <br>
-          • Basic Calendar <br>
-          • Light Theme
-        </td>
-        <td><a href="loginPage.html" class="choose-btn">Choose</a></td>
-      </tr>
+      <tbody>
+        <tr data-plan="Basic" data-price="$0" data-features="Daily Planner, Basic Calendar, Light Theme">
+          <td>Basic</td>
+          <td>$0</td>
+          <td>
+            • Daily Planner <br>
+            • Basic Calendar <br>
+            • Light Theme
+          </td>
+          <td class="basic-note">Included</td>
+        </tr>
 
-      <tr>
-        <td>Standard</td>
-        <td>$5 / month</td>
-        <td>
-          • Everything in Basic <br>
-          • Study Templates <br>
-          • Priority Support
-        </td>
-        <td><a href="loginPage.html" class="choose-btn">Choose</a></td>
-      </tr>
+        <tr data-plan="Standard" data-price="$5 / month" data-features="Everything in Basic, Study Templates, Priority Support">
+          <td>Standard</td>
+          <td>$5 / month</td>
+          <td>
+            • Everything in Basic <br>
+            • Study Templates <br>
+            • Priority Support
+          </td>
+          <td><button class="choose-btn plan-choose-btn" type="button">Choose</button></td>
+        </tr>
 
-      <tr>
-        <td>Pro</td>
-        <td>$10 / month</td>
-        <td>
-          • Everything in Standard <br>
-          • Advanced Time Reports <br>
-          • AI Suggestions <br>
-          • Unlimited Projects
-        </td>
-        <td><a href="loginPage.html" class="choose-btn">Choose</a></td>
-      </tr>
+        <tr data-plan="Pro" data-price="$10 / month" data-features="Everything in Standard, Advanced Time Reports, AI Suggestions, Unlimited Projects">
+          <td>Pro</td>
+          <td>$10 / month</td>
+          <td>
+            • Everything in Standard <br>
+            • Advanced Time Reports <br>
+            • AI Suggestions <br>
+            • Unlimited Projects
+          </td>
+          <td><button class="choose-btn plan-choose-btn" type="button">Choose</button></td>
+        </tr>
 
-      <tr>
-        <td>Expert</td>
-        <td>$20 / month</td>
-        <td>
-          • Everything in Pro <br>
-          • Team Collaboration <br>
-          • Custom Dashboard <br>
-          • Early Feature Access
-        </td>
-        <td><a href="loginPage.html" class="choose-btn">Choose</a></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+        <tr data-plan="Expert" data-price="$20 / month" data-features="Everything in Pro, Team Collaboration, Custom Dashboard, Early Feature Access">
+          <td>Expert</td>
+          <td>$20 / month</td>
+          <td>
+            • Everything in Pro <br>
+            • Team Collaboration <br>
+            • Custom Dashboard <br>
+            • Early Feature Access
+          </td>
+          <td><button class="choose-btn plan-choose-btn" type="button">Choose</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
+  <!-- Plan details modal -->
+  <div class="modal-overlay" id="planDetailsModal">
+    <div class="modal">
+      <h2 class="modal-title" id="planDetailsTitle">Plan Selected</h2>
+      <p class="modal-text" id="planDetailsPrice"></p>
+      <p class="modal-text" id="planDetailsFeatures"></p>
+
+      <div class="modal-actions">
+        <button class="modal-btn btn-red" id="removePlanBtn" type="button">Remove</button>
+        <button class="modal-btn btn-green" id="checkoutPlanBtn" type="button">Checkout</button>
+      </div>
+
+      <button class="modal-close" data-close-modal="planDetailsModal">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
