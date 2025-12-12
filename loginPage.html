@@ -1,83 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="A study planner website to help students stay organized and productive.">
-    <title>Login Page</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A study planner website to help students stay organized and productive.">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
+  <!-- Navbar -->
+  <header>
     <nav class="navigationBar">
-        <a href="index.html" class="navLogo">
-            <h2 class="logo">📅 Poppy</h2>
-        </a>
+      <a href="index.html" class="navLogo">
+        <img src="images/poppy-logo.png" alt="Poppy Logo" class="logo-img">
+      </a>
 
-        <ul class="navigationMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-              <li><a href="pricing.html" class = "naLink">Pricing</a></li>
-            <li><a href="loginPage.html">Login</a></li>
-        </ul>
+      <ul class="navigationMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="pricing.html" class="naLink">Pricing</a></li>
+        <li><a href="loginPage.html">Login</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="signup-container">
-
+  <section class="signup-container">
     <h1 class="title">Sign up</h1>
 
     <div class="input-area">
-        <input id="emailInput" type="email" placeholder="Email address">
-        <p id="notification"></p>
-        <button id="startBtn" disabled>Start trial</button>
+      <input id="emailInput" type="email" placeholder="Email address">
+      <p id="notification"></p>
+      <button id="startBtn" disabled>Start trial</button>
     </div>
 
     <p class="loginText">
-        Already have an account? <a href="#">Log in.</a>
+      Already have an account? <a href="#" id="openLoginModal">Log in.</a>
     </p>
 
     <p class="trial-info">
-        14-day free trial. <br>No credit card required.
+      14-day free trial. <br>No credit card required.
     </p>
+  </section>
 
-</section>
+  <!-- Modals -->
+  <div class="modal-overlay" id="signupDetailsModal">
+    <div class="modal">
+      <h2 class="modal-title">Create your account</h2>
+      <p class="modal-text">Enter your name and choose a username.</p>
 
-<script>
+      <input type="text" id="signupName" class="modal-input" placeholder="Your name">
+      <input type="text" id="signupUsername" class="modal-input" placeholder="Username">
+
+      <p id="signupError" class="modal-error"></p>
+
+      <div class="modal-actions">
+        <button class="modal-btn" id="signupSubmitBtn">Submit</button>
+        <button class="modal-close" data-close-modal="signupDetailsModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <h2 class="modal-title">Log in</h2>
+      <p class="modal-text">Enter your username and password.</p>
+
+      <input type="text" id="loginUsername" class="modal-input" placeholder="Username">
+      <input type="password" id="loginPassword" class="modal-input" placeholder="Password">
+
+      <p id="loginError" class="modal-error"></p>
+
+      <div class="modal-actions">
+        <button class="modal-btn" id="loginSubmitBtn">Submit</button>
+        <button class="modal-close" data-close-modal="loginModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="trialStartsModal">
+    <div class="modal">
+      <h2 class="modal-title">Your 14-day trial starts now</h2>
+      <p class="modal-text">You now have access to Poppy’s core features.</p>
+      <button class="modal-close" id="trialCloseGoHome">Close</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="welcomeToast">
+    <button class="toast-close" id="toastCloseBtn">×</button>
+    <p class="toast-hey" id="toastHeyText">Hey</p>
+    <p class="toast-sub">welcome to poppy</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
     const emailInput = document.getElementById("emailInput");
-const notification = document.getElementById("notification");
-const startBtn = document.getElementById("startBtn");
+    const notification = document.getElementById("notification");
+    const startBtn = document.getElementById("startBtn");
 
-// validate email live
-emailInput.addEventListener("input", () => {
+    // Safety fallback so the page doesn't break if PoppyUI isn't loaded
+    if (!window.PoppyUI) {
+      window.PoppyUI = {
+        openModal: (id) => document.getElementById(id)?.classList.add("show"),
+        closeModal: (id) => document.getElementById(id)?.classList.remove("show"),
+        showWelcomeToast: (name, onClose) => {
+          const toast = document.getElementById("welcomeToast");
+          const hey = document.getElementById("toastHeyText");
+          if (hey) hey.textContent = `Hey ${name}`;
+          if (toast) toast.classList.add("show");
 
-    const email = emailInput.value;
-    const valid = email.includes("@");
+          const closeBtn = document.getElementById("toastCloseBtn");
+          const handler = () => {
+            toast.classList.remove("show");
+            closeBtn.removeEventListener("click", handler);
+            if (typeof onClose === "function") onClose();
+          };
+          if (closeBtn) closeBtn.addEventListener("click", handler);
+        }
+      };
+    }
 
-    if (!valid) {
+    // Email validation
+    emailInput.addEventListener("input", () => {
+      const email = emailInput.value;
+      const valid = email.includes("@");
+
+      if (!valid) {
         notification.textContent = "Email must contain @.";
         startBtn.disabled = true;
         startBtn.classList.remove("enabled");
-
-       
-
-    } else {
+      } else {
         notification.textContent = "";
         startBtn.disabled = false;
         startBtn.classList.add("enabled");
-    }
-});
+      }
+    });
 
+    // Start trial -> signup details
+    startBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.PoppyUI.openModal("signupDetailsModal");
+    });
 
-// When clicking Start Trial
-startBtn.addEventListener("click", () => {
-    alert("Welcome to your free 14-day trial!");
-});
+    // Open login modal
+    document.getElementById("openLoginModal").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.PoppyUI.openModal("loginModal");
+    });
 
-</script>
+    // Signup submit
+    document.getElementById("signupSubmitBtn").addEventListener("click", () => {
+      const name = document.getElementById("signupName").value.trim();
+      const username = document.getElementById("signupUsername").value.trim();
+      const email = emailInput.value.trim();
+      const err = document.getElementById("signupError");
+
+      err.textContent = "";
+
+      if (!name || !username) {
+        err.textContent = "Please enter your name and a username.";
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("poppyUsers") || "[]");
+      const exists = users.some(u => u.username.toLowerCase() === username.toLowerCase());
+
+      if (exists) {
+        err.textContent = "That username is already taken.";
+        return;
+      }
+
+      const generatedPassword = "poppy123";
+
+      users.push({ email, name, username, password: generatedPassword });
+      localStorage.setItem("poppyUsers", JSON.stringify(users));
+      localStorage.setItem("poppyCurrentUser", JSON.stringify({ name, username }));
+
+      window.PoppyUI.closeModal("signupDetailsModal");
+
+      window.PoppyUI.showWelcomeToast(name, () => {
+        window.PoppyUI.openModal("trialStartsModal");
+      });
+    });
+
+    // Login submit
+    document.getElementById("loginSubmitBtn").addEventListener("click", () => {
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+      const err = document.getElementById("loginError");
+
+      err.textContent = "";
+
+      if (!username || !password) {
+        err.textContent = "Please enter your username and password.";
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("poppyUsers") || "[]");
+      const found = users.find(u => u.username.toLowerCase() === username.toLowerCase());
+
+      if (!found) {
+        err.textContent = "Account not found. Please sign up first.";
+        return;
+      }
+
+      if (found.password !== password) {
+        err.textContent = "Incorrect password.";
+        return;
+      }
+
+      localStorage.setItem("poppyCurrentUser", JSON.stringify({ name: found.name, username: found.username }));
+      window.PoppyUI.closeModal("loginModal");
+
+      window.PoppyUI.showWelcomeToast(found.name, () => {
+        window.location.href = "index.html";
+      });
+    });
+
+    // Trial close -> go home
+    document.getElementById("trialCloseGoHome").addEventListener("click", () => {
+      window.PoppyUI.closeModal("trialStartsModal");
+      window.location.href = "index.html";
+    });
+  </script>
 
 </body>
 </html>
