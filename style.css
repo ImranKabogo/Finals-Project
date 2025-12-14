@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 /* Base */
 body {
   margin: 0;
@@ -5,6 +12,11 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(to right, white 10%, #fcd9c3 90%);
   min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Navbar */
@@ -193,11 +205,107 @@ body {
   font-weight: bold;
 }
 
+/* ============================
+   TABLET & MOBILE RESPONSIVE
+   ============================ */
+
+@media (max-width: 900px) {
+
+  /* Navbar */
+  .navigationBar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 1.5rem;
+  }
+
+  .navigationMenu {
+    padding: 0;
+    text-align: center;
+  }
+
+  .navigationMenu li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .logo-img {
+    width: 140px;
+    height: auto;
+  }
+
+  /* Hero text */
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  /* Advantages section */
+  .adv-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .adv-left,
+  .adv-right {
+    width: 100%;
+  }
+
+  .adv-title {
+    font-size: 28px;
+  }
+}
+
+/* ============================
+   SMALL PHONES
+   ============================ */
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .badge {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+
+  .adv-list li {
+    font-size: 16px;
+  }
+}
+
+
+
 /* Feedback / Contact section */
 .contact-section {
   width: 100%;
   padding: 80px 0;
   background: linear-gradient(to right, white 10%, #fcd9c3 90%);
+}
+
+@media (max-width: 900px) {
+
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-image,
+  .contact-form {
+    width: 100%;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
 }
 
 .contact-container {
@@ -458,7 +566,8 @@ body {
 }
 
 input[type="email"] {
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   padding: 14px;
   font-size: 1rem;
   border-radius: 25px;
@@ -763,4 +872,88 @@ input[type="email"]:focus {
   font-weight: 600;
   color: #666;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .pricing-section {
+    padding: 40px 20px;
+  }
+
+  .pricing-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .pricing-table {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .pricing-table,
+  .pricing-table thead,
+  .pricing-table tbody,
+  .pricing-table th,
+  .pricing-table td,
+  .pricing-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide table headers */
+  .pricing-table thead {
+    display: none;
+  }
+
+  /* Card style rows */
+  .pricing-table tr {
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .pricing-table td {
+    text-align: left;
+    padding: 8px 0;
+    border: none;
+  }
+
+  /* Labels for each cell */
+  .pricing-table td:nth-child(1)::before {
+    content: "Plan: ";
+    font-weight: 600;
+  }
+
+  .pricing-table td:nth-child(2)::before {
+    content: "Price: ";
+    font-weight: 600;
+  }
+
+  .pricing-table td:nth-child(3)::before {
+    content: "Features: ";
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .pricing-table td:nth-child(4)::before {
+    content: "";
+  }
+
+  .choose-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+  }
+
+  .basic-note {
+    font-weight: 600;
+    color: #555;
+  }
 }
